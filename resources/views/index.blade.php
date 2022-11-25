@@ -32,7 +32,7 @@
                     <th>Nama</th>
                     <th>Tanggal Lahir</th>
                     <th>Gaji</th>
-                    <th>Status Karyawan</th>
+                    <!-- <th>Status Karyawan</th> -->
                     <th>Action</th>
                 </tr>
             </thead>
@@ -42,7 +42,7 @@
                         <td>{{ $item->nama }}</td>
                         <td>{{ $item->tanggal_lahir }}</td>
                         <td>{{ $item->gaji }}</td>
-                        <td>{{ $item->status_karyawan == 1 ? 'Aktif' : 'Tidak Aktif' }}</td>
+                        <!-- <td>{{ $item->status_karyawan == 1 ? 'Aktif' : 'Tidak Aktif' }}</td> -->
                         <td><button type="button" class="btn btn-warning btn-edit"
                                 data-url={{ route('karyawan.getKaryawan', ['id' => $item->id]) }} data-toggle="modal"
                                 data-target="#modalEdit">
@@ -92,7 +92,7 @@
                                 <input type="text" class="form-control" name="gaji" id="gaji" placeholder="" value="">
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label for="status_karyawan" class="col-sm-3 col-form-label">Status Karyawan</label>
                             <div class="col-sm-9">
                                 <select id="status_karyawan" class="custom-select" name="status_karyawan">
@@ -100,7 +100,7 @@
                                     <option value=0>Tidak Aktif</option>
                                 </select>
                             </div>
-                        </div>
+                        </div> -->
 
                     </div>
                     <div class="modal-footer">
@@ -144,7 +144,7 @@
                                 <input type="text" class="form-control" name="gaji" id="gaji" placeholder="" value="">
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label for="status_karyawan" class="col-sm-3 col-form-label">Status Karyawan</label>
                             <div class="col-sm-9">
                                 <select id="status_karyawan" class="custom-select" name="status_karyawan">
@@ -152,7 +152,7 @@
                                     <option value=0>Tidak Aktif</option>
                                 </select>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -180,7 +180,6 @@
             $('#modalEdit #nama').val('')
             $('#modalEdit #tanggal_lahir').val('')
             $('#modalEdit #gaji').val('')
-            $('#modalEdit #status_karyawan').val('')
             $.ajax({
                 type: "get",
                 url: url,
@@ -190,7 +189,6 @@
                     $('#modalEdit #nama').val(res['nama'])
                     $('#modalEdit #tanggal_lahir').val(res['tanggal_lahir'])
                     $('#modalEdit #gaji').val(res['gaji'])
-                    $('#modalEdit #status_karyawan').val(res['status_karyawan'])
                 }
             });
         });

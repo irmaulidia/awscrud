@@ -21,10 +21,9 @@ class KaryawanController extends Controller
             'nama' => $req->nama,
             'tanggal_lahir' => $req->tanggal_lahir,
             'gaji' => $req->gaji,
-            'status_karyawan' => $req->status_karyawan,
         ]);
 
-        return redirect()->route('karyawan.index')->with('status', 'Tambah Data Berhasil');
+        return redirect()->route('karyawan.index')->with( 'Tambah Data Berhasil');
     }
     public function update(Request $req)
     {
@@ -32,17 +31,17 @@ class KaryawanController extends Controller
             'nama' => $req->nama,
             'tanggal_lahir' => $req->tanggal_lahir,
             'gaji' => $req->gaji,
-            'status_karyawan' => $req->status_karyawan,
+            // 'status_karyawan' => $req->status_karyawan,
         ]);
 
-        return redirect()->route('karyawan.index')->with('status', 'Edit Data Berhasil');
+        return redirect()->route('karyawan.index')->with( 'Edit Data Berhasil');
 
     }
     public function delete($id)
     {
         $karyawan = Karyawan::find($id);
         $karyawan->delete();
-        return redirect()->route('karyawan.index')->with('status', 'Hapus Data Berhasil');
+        return redirect()->route('karyawan.index')->with( 'Hapus Data Berhasil');
 
     }
     public function getKaryawan($id)
